@@ -1,7 +1,7 @@
 // Default JS Library
 import React from "react"
 import { Helmet } from 'react-helmet'
-import { graphql } from 'gatsby'
+import { Link, useStaticQuery, graphql } from 'gatsby'
 
 // ICON List
 import { faMailBulk } from '@fortawesome/free-solid-svg-icons'
@@ -28,21 +28,21 @@ import { faWindows } from '@fortawesome/free-brands-svg-icons'
 // import { Button } from 'reactstrap';
 // import { Navbar } from 'reactstrap';
 
-export const data = graphql `
-    query {
-        site {
-            siteMetadata {
-                headerTitle, 
-                blogTitle, 
-                author,
-                vision,
-                purpose
+export default () => {
+    const data = useStaticQuery(graphql `
+        query {
+            site {
+                siteMetadata {
+                    headerTitle, 
+                    blogTitle, 
+                    author,
+                    vision,
+                    purpose
+                }
             }
         }
-    }
-`
+    `)
 
-export default ({data}) => {
     return ( 
         <div className="container-fluid">
             <Helmet defer={false} >
@@ -69,6 +69,13 @@ export default ({data}) => {
             </div>
             <div className="row">
                 <span style={{fontFamily:'Jaldi'}}>Marck Script : System Style - 503 Service Unavailable [CWK-001]</span>
+            </div>
+            <div className="row">
+                <div className="container-fluid">
+                    <div className="row"><Link to="/404/">About this blog</Link></div>
+                    <div className="row"><Link to="/404/">About me</Link></div>
+                    <div className="row"><Link to="/404/">Posts</Link></div>
+                </div>
             </div>
             <div className="row">
                 <span className="align-middle"><FontAwesomeIcon icon={faUserAstronaut} />&nbsp;{ data.site.siteMetadata.author }</span>

@@ -7,5 +7,14 @@ module.exports = {
         purpose: `todo`
     },
     plugins: [`gatsby-plugin-react-helmet`],
-    plugins: [`gatsby-plugin-fontawesome-css`]
+    plugins: [`gatsby-plugin-fontawesome-css`],
+    plugins: [
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `pages`,
+                path: `${__dirname}/src/posts/`
+            }
+        }
+    ]
 }
