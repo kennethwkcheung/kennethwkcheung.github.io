@@ -3,7 +3,7 @@ import React from "react"
 import { Helmet } from 'react-helmet'
 
 // Default CSS Library
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import "normalize.css"
 
 // ICON List
@@ -26,17 +26,32 @@ import { faWindows } from '@fortawesome/free-brands-svg-icons'
 // import { faLinux } from '@fortawesome/free-brands-svg-icons'
 // import { faTypo3 } from '@fortawesome/free-brands-svg-icons'
 // import { Button } from 'reactstrap';
+// import { Navbar } from 'reactstrap';
+
+// Default Font
+import "fontsource-jaldi"
+import "fontsource-zilla-slab"
 
 export default () => {
     return ( 
         <div className="container-fluid">
+            <Helmet defer={false} >
+                <meta charSet="utf-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <title>kennethwkcheung.github.io</title>
+            </Helmet>
             <div className="row">
-                <Helmet title="kennethwkcheung.github.io" defer={false} />
                 <FontAwesomeIcon icon={faNodeJs} /> <FontAwesomeIcon icon={faNpm} /> <FontAwesomeIcon icon={faJs} /> 
                 <FontAwesomeIcon icon={faReact} /> <FontAwesomeIcon icon={faMarkdown} /> 
                 <FontAwesomeIcon icon={faBootstrap} /> <FontAwesomeIcon icon={faSass} /> <FontAwesomeIcon icon={faFortAwesome} /> 
                 <FontAwesomeIcon icon={faGitAlt} /> <FontAwesomeIcon icon={faGithub} /> <FontAwesomeIcon icon={faGitkraken} /> 
-                <FontAwesomeIcon icon={faWindows} /> 503 Service Unavailable [CWK-001]
+                <FontAwesomeIcon icon={faWindows} />
+            </div>
+            <div className="row">
+                <span style={{fontFamily:'Zilla Slab'}}>Zilla Slab : Content Style</span>
+            </div>
+            <div className="row">
+                <span style={{fontFamily:'Jaldi'}}>Marck Script : System Style - 503 Service Unavailable [CWK-001]</span>
             </div>
         </div>
     )
