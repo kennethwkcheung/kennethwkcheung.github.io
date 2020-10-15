@@ -1,7 +1,12 @@
+// Default JS Library
 import React from "react"
 import { Helmet } from 'react-helmet'
-import 'bootstrap/dist/css/bootstrap.min.css';
 
+// Default CSS Library
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "normalize.css"
+
+// ICON List
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faNodeJs } from '@fortawesome/free-brands-svg-icons'
 import { faNpm } from '@fortawesome/free-brands-svg-icons'
@@ -24,13 +29,15 @@ import { faWindows } from '@fortawesome/free-brands-svg-icons'
 
 export default () => {
     return ( 
-        <span>
-            <Helmet title="kennethwkcheung.github.io" defer={false} />
-            <FontAwesomeIcon icon={faNodeJs} /> <FontAwesomeIcon icon={faNpm} /> <FontAwesomeIcon icon={faJs} /> 
-            <FontAwesomeIcon icon={faReact} /> <FontAwesomeIcon icon={faMarkdown} /> 
-            <FontAwesomeIcon icon={faBootstrap} /> <FontAwesomeIcon icon={faSass} /> <FontAwesomeIcon icon={faFortAwesome} /> 
-            <FontAwesomeIcon icon={faGitAlt} /> <FontAwesomeIcon icon={faGithub} /> <FontAwesomeIcon icon={faGitkraken} /> 
-            <FontAwesomeIcon icon={faWindows} /> 503 Service Unavailable [CWK-001]
-        </span>
+        <div className="container-fluid">
+            <div className="row">
+                <Helmet title="kennethwkcheung.github.io" defer={false} />
+                <FontAwesomeIcon icon={faNodeJs} /> <FontAwesomeIcon icon={faNpm} /> <FontAwesomeIcon icon={faJs} /> 
+                <FontAwesomeIcon icon={faReact} /> <FontAwesomeIcon icon={faMarkdown} /> 
+                <FontAwesomeIcon icon={faBootstrap} /> <FontAwesomeIcon icon={faSass} /> <FontAwesomeIcon icon={faFortAwesome} /> 
+                <FontAwesomeIcon icon={faGitAlt} /> <FontAwesomeIcon icon={faGithub} /> <FontAwesomeIcon icon={faGitkraken} /> 
+                <FontAwesomeIcon icon={faWindows} /> 503 Service Unavailable [CWK-001]
+            </div>
+        </div>
     )
 }

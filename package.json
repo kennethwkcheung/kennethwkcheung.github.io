@@ -31,6 +31,7 @@
     "gatsby": "^2.24.73",
     "gatsby-plugin-fontawesome-css": "^1.0.0",
     "gatsby-plugin-react-helmet": "^3.3.14",
+    "normalize.css": "^8.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
