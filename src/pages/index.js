@@ -1,12 +1,12 @@
 // Default JS Library
 import React from "react"
 import { Helmet } from 'react-helmet'
-
-// Default CSS Library
-import 'bootstrap/dist/css/bootstrap.min.css'
-import "normalize.css"
+import { graphql } from 'gatsby'
 
 // ICON List
+import { faMailBulk } from '@fortawesome/free-solid-svg-icons'
+import { faUserAstronaut } from '@fortawesome/free-solid-svg-icons'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faNodeJs } from '@fortawesome/free-brands-svg-icons'
 import { faNpm } from '@fortawesome/free-brands-svg-icons'
@@ -28,18 +28,35 @@ import { faWindows } from '@fortawesome/free-brands-svg-icons'
 // import { Button } from 'reactstrap';
 // import { Navbar } from 'reactstrap';
 
-// Default Font
-import "fontsource-jaldi"
-import "fontsource-zilla-slab"
+export const data = graphql `
+    query {
+        site {
+            siteMetadata {
+                headerTitle, 
+                blogTitle, 
+                author,
+                vision,
+                purpose
+            }
+        }
+    }
+`
 
-export default () => {
+export default ({data}) => {
     return ( 
         <div className="container-fluid">
             <Helmet defer={false} >
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <title>kennethwkcheung.github.io</title>
+                <title>{ data.site.siteMetadata.headerTitle }</title>
             </Helmet>
+            <div className="row">
+                <div className="container-fluid">
+                    <div className="row"><span className="align-middle"><FontAwesomeIcon icon={faMailBulk} />&nbsp;{ data.site.siteMetadata.blogTitle }</span></div>
+                    <div className="row">Vision: { data.site.siteMetadata.vision }</div>
+                    <div className="row">Purpose: { data.site.siteMetadata.purpose }</div>
+                </div>
+            </div>
             <div className="row">
                 <FontAwesomeIcon icon={faNodeJs} /> <FontAwesomeIcon icon={faNpm} /> <FontAwesomeIcon icon={faJs} /> 
                 <FontAwesomeIcon icon={faReact} /> <FontAwesomeIcon icon={faMarkdown} /> 
@@ -52,6 +69,9 @@ export default () => {
             </div>
             <div className="row">
                 <span style={{fontFamily:'Jaldi'}}>Marck Script : System Style - 503 Service Unavailable [CWK-001]</span>
+            </div>
+            <div className="row">
+                <span className="align-middle"><FontAwesomeIcon icon={faUserAstronaut} />&nbsp;{ data.site.siteMetadata.author }</span>
             </div>
         </div>
     )
