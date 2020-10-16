@@ -1,12 +1,18 @@
 // Default JS Library
 import React from "react"
 import { Helmet } from 'react-helmet'
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 
-// ICON List
+// Components
+import Header from '../components/_header/header'
+import Footer from '../components/_footer/footer'
+import Map from '../components/_map/map'
+
+// Default ICONs
 import { faMailBulk } from '@fortawesome/free-solid-svg-icons'
 import { faUserAstronaut } from '@fortawesome/free-solid-svg-icons'
 
+// Custom ICONs
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faNodeJs } from '@fortawesome/free-brands-svg-icons'
 import { faNpm } from '@fortawesome/free-brands-svg-icons'
@@ -50,6 +56,9 @@ export default () => {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <title>{ data.site.siteMetadata.headerTitle }</title>
             </Helmet>
+            <Header />
+            <Map />
+            <Footer />
             <div className="row">
                 <div className="container-fluid">
                     <div className="row"><span className="align-middle"><FontAwesomeIcon icon={faMailBulk} />&nbsp;{ data.site.siteMetadata.blogTitle }</span></div>
@@ -69,13 +78,6 @@ export default () => {
             </div>
             <div className="row">
                 <span style={{fontFamily:'Jaldi'}}>Marck Script : System Style - 503 Service Unavailable [CWK-001]</span>
-            </div>
-            <div className="row">
-                <div className="container-fluid">
-                    <div className="row"><Link to="/404/">About this blog</Link></div>
-                    <div className="row"><Link to="/404/">About me</Link></div>
-                    <div className="row"><Link to="/404/">Posts</Link></div>
-                </div>
             </div>
             <div className="row">
                 <span className="align-middle"><FontAwesomeIcon icon={faUserAstronaut} />&nbsp;{ data.site.siteMetadata.author }</span>
