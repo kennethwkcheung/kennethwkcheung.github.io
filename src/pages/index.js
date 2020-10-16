@@ -1,12 +1,8 @@
 // Default JS Library
 import React from "react"
-import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
-// Components
-import Header from '../components/_header/header'
-import Footer from '../components/_footer/footer'
-import Map from '../components/_map/map'
+import Layout from '../components/_layout/layout'
 
 // Default ICONs
 import { faMailBulk } from '@fortawesome/free-solid-svg-icons'
@@ -39,7 +35,6 @@ export default () => {
         query {
             site {
                 siteMetadata {
-                    headerTitle, 
                     blogTitle, 
                     author,
                     vision,
@@ -50,20 +45,14 @@ export default () => {
     `)
 
     return ( 
-        <div className="container-fluid">
-            <Helmet defer={false} >
-                <meta charSet="utf-8" />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <title>{ data.site.siteMetadata.headerTitle }</title>
-            </Helmet>
-            <Header />
-            <Map />
-            <Footer />
+        <Layout>
             <div className="row">
-                <div className="container-fluid">
-                    <div className="row"><span className="align-middle"><FontAwesomeIcon icon={faMailBulk} />&nbsp;{ data.site.siteMetadata.blogTitle }</span></div>
-                    <div className="row">Vision: { data.site.siteMetadata.vision }</div>
-                    <div className="row">Purpose: { data.site.siteMetadata.purpose }</div>
+                <div className={`col nopadding`}>
+                    <div className="container-fluid">
+                        <div className="row"><span className="align-middle"><FontAwesomeIcon icon={faMailBulk} />&nbsp;{ data.site.siteMetadata.blogTitle }</span></div>
+                        <div className="row">Vision: { data.site.siteMetadata.vision }</div>
+                        <div className="row">Purpose: { data.site.siteMetadata.purpose }</div>
+                    </div>
                 </div>
             </div>
             <div className="row">
@@ -80,8 +69,8 @@ export default () => {
                 <span style={{fontFamily:'Jaldi'}}>Marck Script : System Style - 503 Service Unavailable [CWK-001]</span>
             </div>
             <div className="row">
-                <span className="align-middle"><FontAwesomeIcon icon={faUserAstronaut} />&nbsp;{ data.site.siteMetadata.author }</span>
+                <span className="align-middle">&copy;&nbsp;Copyright&nbsp;2020&nbsp;<FontAwesomeIcon icon={faUserAstronaut} />&nbsp;{ data.site.siteMetadata.author }.&nbsp;All rights reserved</span>
             </div>
-        </div>
+        </Layout>
     )
 }
