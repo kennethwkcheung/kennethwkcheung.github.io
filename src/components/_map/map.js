@@ -15,7 +15,10 @@ export default () => (
                         <div className="col nopadding"><Link to="/about/">About</Link></div>
                     </div>
                     <div className="row">
-                        <div className="col nopadding"><Link to="/posts/">Posts</Link></div>
+                        <div className="col nopadding"><Link to="/blogPost/">Blog post (ref)</Link></div>
+                    </div>
+                    <div className="row">
+                        <div className="col nopadding"><Link to="/allPosts/">All posts (todo)</Link></div>
                     </div>
                     <div className="row">
                         <div className="col nopadding"><Link to="/sketchbook/">Sketchbook</Link></div>

@@ -6,14 +6,15 @@ module.exports = {
         vision: `todo`,
         purpose: `todo`
     },
-    plugins: [`gatsby-plugin-react-helmet`],
-    plugins: [`gatsby-plugin-fontawesome-css`],
     plugins: [
+        `gatsby-plugin-fontawesome-css`,
+        `gatsby-plugin-react-helmet`,
+        `gatsby-transformer-remark`,
         {
             resolve: `gatsby-source-filesystem`,
             options: {
-                name: `posts`,
-                path: `${__dirname}/src/posts`
+                name: `posts-all`,
+                path: `${__dirname}/src/posts/`
             }
         }
     ]
