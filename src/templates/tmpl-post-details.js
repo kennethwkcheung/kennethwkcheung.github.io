@@ -5,16 +5,16 @@ export default ({pageContext}) => {
     return (
         <Layout>
             <div className="row">
-                <span style={{fontFamily:'Zilla Slab'}}>{ pageContext.dateCreated }</span>
+                <span style={{fontFamily:'Zilla Slab'}}>Date created: { pageContext.dateCreated }</span>
             </div>
             <div className="row">
-                <span style={{fontFamily:'Zilla Slab'}}>{ pageContext.dateLastUpdated }</span>
+                <span style={{fontFamily:'Zilla Slab'}}>Date last updated: { pageContext.dateLastUpdated }</span>
             </div>
             <div className="row">
-                <span style={{fontFamily:'Zilla Slab'}}>{ pageContext.title }</span>
+                <span style={{fontFamily:'Zilla Slab'}}>Post sub title: { pageContext.subtitle }</span>
             </div>
-            <div className="row">
-                <span style={{fontFamily:'Zilla Slab'}}>{ pageContext.content }</span>
+            <div className={'row content-post'}>
+                <span style={{fontFamily:'Zilla Slab'}} dangerouslySetInnerHTML={{ __html:pageContext.content }} />
             </div>
         </Layout >
     )

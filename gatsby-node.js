@@ -3,49 +3,46 @@ exports.createPages = async ({ actions, graphql }) => {
     // TODO: Create MD files
     // TODO: Create post files
 
-    const postRecords = await graphql(`
+    const result = await graphql(`
         query {
             allMarkdownRemark {
                 edges {
                     node {
                         frontmatter {
+                            dateCreated
+                            dateLastUpdated
                             datePublished
                             tags
+                            subtitle
                         }
+                        html
                     }
                 }
             }
         }
 	`);
 
+    // Create index page of all blog posts
     actions.createPage({
         path: "/allPosts/",
         component: require.resolve("./src/templates/tmpl-post-list.js"),
-        context: postRecords
+        context: result
+    })
+    
+    // Create detail page of a single blog post
+    result.data.allMarkdownRemark.edges.forEach((record) => {
+        let metaData = record.node.frontmatter;
+        let recordData = record.node.html;
+
+        actions.createPage({
+            path: "/posts/" + metaData.datePublished,
+            component: require.resolve("./src/templates/tmpl-post-details.js"),
+            context: {
+                dateCreated: metaData.dateCreated,
+                dateLastUpdated: metaData.dateLastUpdated,
+                subtitle: metaData.subtitle,
+                content: recordData
+            }
+        })
     })
 } 
-
-    /*
-    createPage({
-        path: "/posts/20201019",
-        component: require.resolve("./src/templates/tmpl-post-details.js"),
-        context: {
-            dateCreated: "dateCreated",
-            dateLastUpdated: "dateLastUpdated",
-            title: "Post 20201019",
-            content: "Content of 20201019",
-        }
-    })
-
-	posts.forEach((post, idx) => {
-		actions.createPage({
-			path: post.frontmatter.slug,
-			component: require.resolve('./src/templates/post.js'),
-			context: {
-				slug: post.frontmatter.slug,
-				prev: idx === 0 ? null : posts[idx - 1],
-				next: idx === posts.length - 1 ? null : posts[idx + 1],
-			},
-		})
-    })
-    */
