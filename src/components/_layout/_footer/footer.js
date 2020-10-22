@@ -2,11 +2,11 @@ import React from 'react'
 import defaultStyle from './footer.module.css'
 
 export default () => (
-    <header>
+    <footer>
         <div className="row">
             <div className={`col nopadding ${defaultStyle.default}`}>
                 BLOG FOOTER
             </div>
         </div>
-    </header>
+    </footer>
 )

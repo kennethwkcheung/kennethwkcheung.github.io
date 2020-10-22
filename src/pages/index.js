@@ -2,7 +2,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from 'gatsby'
 
-import Layout from '../components/_layout/layout'
+import Template from '../components/_layout/_template/template'
 
 // Default ICONs
 import { faMailBulk } from '@fortawesome/free-solid-svg-icons'
@@ -45,7 +45,7 @@ export default () => {
     `)
 
     return ( 
-        <Layout>
+        <Template>
             <div className="row">
                 <div className={`col nopadding`}>
                     <div className="container-fluid">
@@ -71,6 +71,6 @@ export default () => {
             <div className="row">
                 <span className="align-middle">&copy;&nbsp;Copyright&nbsp;2020&nbsp;<FontAwesomeIcon icon={faUserAstronaut} />&nbsp;{ data.site.siteMetadata.author }.&nbsp;All rights reserved</span>
             </div>
-        </Layout>
+        </Template>
     )
 }
