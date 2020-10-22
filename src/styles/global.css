@@ -7,3 +7,27 @@
     background: #1E1A8B;
     color: #FFFFFF;
 }
+
+.default-background-theme {
+    background: #031f1c;
+}
+
+.default-background-support {
+    background: #080823;
+}
+
+.default-background-lowlight {
+    background: #38524f;
+}
+
+.default-background-highlight {
+    background: #F0F0EC;
+}
+
+.default-font-highlight {
+    background: #310508;
+}
+
+.default-font-lowlight {
+    background: #FFCD70;
+}
