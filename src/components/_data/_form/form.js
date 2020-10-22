@@ -15,6 +15,7 @@ export default () => {
                         <div className="row">
                             <div className="col">
                                 Publish date: <DatePicker selected={startDate} onChange={date => setStartDate(date)} showTimeSelect dateFormat="MMMM d, yyyy h:mm aa" />
+                                <br/>https://reactdatepicker.com/
                             </div>
                         </div>
                         <div className="row">
