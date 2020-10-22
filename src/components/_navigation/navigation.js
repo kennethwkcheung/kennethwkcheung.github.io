@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import defaultStyle from './map.module.css'
+import defaultStyle from './navigation.module.css'
 
 export default () => (
-    <map>
+    <navigation>
         <div className="row">
             <div className={`col nopadding ${defaultStyle.default}`}>
                 <div className="container-fluid">
@@ -26,5 +26,5 @@ export default () => (
                 </div>
             </div>
         </div>
-    </map>
+    </navigation>
 )

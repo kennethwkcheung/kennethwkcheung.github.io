@@ -6,7 +6,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 // Components
 import Header from '../_header/header'
 import Footer from '../_footer/footer'
-import Map from '../../_map/map'
+import Navigation from '../../_navigation/navigation'
 
 export default ({children}) => {
     const data = useStaticQuery(graphql `
@@ -28,7 +28,7 @@ export default ({children}) => {
                     <title>{ data.site.siteMetadata.headerTitle }</title>
                 </Helmet>
                 <Header />
-                <Map />
+                <Navigation />
                 {children}
                 <Footer />
             </div>
