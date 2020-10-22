@@ -42,6 +42,7 @@
     "modernizr": "^3.11.3",
     "normalize.css": "^8.0.1",
     "react": "^16.13.1",
+    "react-datepicker": "^3.3.0",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
     "reactstrap": "^8.6.0"
