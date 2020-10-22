@@ -45,4 +45,12 @@ exports.createPages = async ({ actions, graphql }) => {
             }
         })
     })
+
+    if(process.env.NODE_ENV==="development") {
+        actions.createPage({
+            path: "/admin/",
+            component: require.resolve("./src/templates/tmpl-admin-page.js"),
+            context: result
+        })
+    }
 } 
