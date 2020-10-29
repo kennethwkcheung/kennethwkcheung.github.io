@@ -1,4 +1,19 @@
-exports.createPages = async ({ actions, graphql }) => {
+const { createFilePath } = require(`gatsby-source-filesystem`)
+
+exports.onCreateNode = ({ node, getNode, actions }) => {
+    const { createNodeField } = actions
+    if (node.internal.type === `MarkdownRemark`) {
+        const slug = createFilePath({ node, getNode, basePath: `pages` })
+        console.log(slug);
+        createNodeField({
+            node,
+            name: `slug`,
+            value: slug,
+        })
+    }
+}
+
+exports.createPages = async ({ graphql, actions }) => {
     // TODO: Connect & retrieve data from DB
     // TODO: Create MD files
     // TODO: Create post files
@@ -8,6 +23,9 @@ exports.createPages = async ({ actions, graphql }) => {
             allMarkdownRemark {
                 edges {
                     node {
+                        fields {
+                            slug
+                        }
                         frontmatter {
                             dateCreated
                             dateLastUpdated
@@ -31,11 +49,13 @@ exports.createPages = async ({ actions, graphql }) => {
     
     // Create detail page of a single blog post
     result.data.allMarkdownRemark.edges.forEach((record) => {
-        let metaData = record.node.frontmatter;
-        let recordData = record.node.html;
+        let recordNode = record.node;
+        let metaData = recordNode.frontmatter;
+        let recordData = recordNode.html;
+        let recordAttributes = recordNode.fields;
 
         actions.createPage({
-            path: "/posts/" + metaData.datePublished,
+            path: `${recordAttributes.slug}`,
             component: require.resolve("./src/templates/tmpl-post-details.js"),
             context: {
                 dateCreated: metaData.dateCreated,

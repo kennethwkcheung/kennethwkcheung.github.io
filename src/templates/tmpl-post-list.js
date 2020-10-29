@@ -7,15 +7,16 @@ export default ({pageContext}) => {
     let postList = pageContext.data.allMarkdownRemark.edges;
     let postTotal = postList.length;
     let postLinks = postList.map( (record) => {
+        let tagList = record.node.frontmatter.tags;
         return (
             <div className="row">
                 <span style={{fontFamily:'Zilla Slab'}}>
-                    <Link to={`/posts/${ record.node.frontmatter.datePublished }`}>
+                    <Link to={`${ record.node.fields.slug }`}>
                         { record.node.frontmatter.datePublished }
                     </Link>
                 </span>
                 &nbsp;
-                <span style={{fontFamily:'Zilla Slab'}}>{ record.node.frontmatter.tags }</span>
+        <span style={{fontFamily:'Zilla Slab'}}>{ tagList }</span>
             </div>
         )
     })
