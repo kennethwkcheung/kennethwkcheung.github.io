@@ -4,7 +4,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     const { createNodeField } = actions
     if (node.internal.type === `MarkdownRemark`) {
         const slug = createFilePath({ node, getNode, basePath: `pages` })
-        console.log(slug);
         createNodeField({
             node,
             name: `slug`,
@@ -14,10 +13,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 }
 
 exports.createPages = async ({ graphql, actions }) => {
-    // TODO: Connect & retrieve data from DB
-    // TODO: Create MD files
-    // TODO: Create post files
-
     const result = await graphql(`
         query {
             allMarkdownRemark {
