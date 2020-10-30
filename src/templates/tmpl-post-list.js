@@ -3,11 +3,18 @@ import { Link } from 'gatsby'
 
 import Template from '../components/_layout/_template/template'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFeatherAlt } from '@fortawesome/free-solid-svg-icons'
+
 export default ({pageContext}) => {
     let postList = pageContext.data.allMarkdownRemark.edges;
     let postTotal = postList.length;
     let postLinks = postList.map( (record) => {
-        let tagList = record.node.frontmatter.tags;
+        const tagList = []
+        record.node.frontmatter.tags.forEach((tag)=>{
+            tagList.push(<span style={{fontFamily:'Zilla Slab'}}><FontAwesomeIcon icon={faFeatherAlt}/>{tag}&nbsp;</span> )
+        })
+
         return (
             <div className="row">
                 <span style={{fontFamily:'Zilla Slab'}}>
@@ -16,7 +23,7 @@ export default ({pageContext}) => {
                     </Link>
                 </span>
                 &nbsp;
-        <span style={{fontFamily:'Zilla Slab'}}>{ tagList }</span>
+                { tagList }
             </div>
         )
     })
