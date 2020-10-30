@@ -32,6 +32,7 @@
     "bootstrap": "^4.5.3",
     "fontsource-jaldi": "^3.0.9",
     "fontsource-zilla-slab": "^3.0.9",
+    "formik": "^2.2.1",
     "gatsby": "^2.24.73",
     "gatsby-plugin-fontawesome-css": "^1.0.0",
     "gatsby-plugin-mdx": "^1.2.48",
