@@ -5,7 +5,8 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Template from '../components/_layout/_template/template'
 
 // Default ICONs
-import { faMailBulk } from '@fortawesome/free-solid-svg-icons'
+// import { faMailBulk } from '@fortawesome/free-solid-svg-icons'
+import { faSpaceShuttle } from '@fortawesome/free-solid-svg-icons'
 import { faUserAstronaut } from '@fortawesome/free-solid-svg-icons'
 
 // Custom ICONs
@@ -49,7 +50,9 @@ export default () => {
             <div className="row">
                 <div className={`col nopadding`}>
                     <div className="container-fluid">
-                        <div className="row"><span className="align-middle"><FontAwesomeIcon icon={faMailBulk} />&nbsp;{ data.site.siteMetadata.blogTitle }</span></div>
+                        <div className="row"><span className="align-middle"><FontAwesomeIcon icon={faSpaceShuttle} rotation={270} />
+                            { data.site.siteMetadata.blogTitle }</span>
+                        </div>
                         <div className="row">Vision: { data.site.siteMetadata.vision }</div>
                         <div className="row">Purpose: { data.site.siteMetadata.purpose }</div>
                     </div>
