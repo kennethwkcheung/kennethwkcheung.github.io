@@ -1,6 +1,6 @@
 module.exports = {
     siteMetadata: {
-        headerTitle: `BLOG SHUTTLE`,
+        headerTitle: `BlogShuttle`,
         blogTitle: `BlogShuttle`,
         author: `kennc`,
         vision: `todo`,

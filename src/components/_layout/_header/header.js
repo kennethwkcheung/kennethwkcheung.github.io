@@ -11,7 +11,7 @@ export default ({children, blogTitle}) => {
             <div className='container-fluid'>
                 <div className='row'>
                     <div className={'col'}>
-                        <span className='align-middle'><FontAwesomeIcon icon={faSpaceShuttle} rotation={270} /> { blogTitle }</span>
+                        <span className='align-middle'><FontAwesomeIcon icon={faSpaceShuttle} transform={{ rotate:315 }} /> { blogTitle }</span>
                     </div>
                 </div>
                 { children }

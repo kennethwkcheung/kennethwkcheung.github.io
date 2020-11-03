@@ -18,7 +18,6 @@ import { faMarkdown } from '@fortawesome/free-brands-svg-icons'
 import { faGitAlt } from '@fortawesome/free-brands-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faGitkraken } from '@fortawesome/free-brands-svg-icons'
-import { faWindows } from '@fortawesome/free-brands-svg-icons'
 
 export default ({children}) => {
     const data = useStaticQuery(graphql `
@@ -69,7 +68,6 @@ export default ({children}) => {
                         <FontAwesomeIcon icon={faReact} /> <FontAwesomeIcon icon={faMarkdown} /> 
                         <FontAwesomeIcon icon={faBootstrap} /> <FontAwesomeIcon icon={faSass} /> <FontAwesomeIcon icon={faFortAwesome} /> 
                         <FontAwesomeIcon icon={faGitAlt} /> <FontAwesomeIcon icon={faGithub} /> <FontAwesomeIcon icon={faGitkraken} /> 
-                        <FontAwesomeIcon icon={faWindows} />                        
                     </div>
                 </div>
             </Footer>
