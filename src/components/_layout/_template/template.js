@@ -54,12 +54,6 @@ export default ({children}) => {
                 </div>
             </Header>
             <Navigation />
-            <div className='row'>
-                <span style={{fontFamily:'Zilla Slab'}}>Zilla Slab : Content Style</span>
-            </div>
-            <div className='row'>
-                <span style={{fontFamily:'Jaldi'}}>Marck Script : System Style - 503 Service Unavailable [CWK-001]</span>
-            </div>
             {children}
             <Footer author={ data.site.siteMetadata.author }>
                 <div className='row'>
