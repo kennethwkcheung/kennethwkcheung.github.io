@@ -1,6 +1,6 @@
 module.exports = {
     siteMetadata: {
-        headerTitle: `GATSBYJS-BLOG`,
+        headerTitle: `BLOG SHUTTLE`,
         blogTitle: `BlogShuttle`,
         author: `kennc`,
         vision: `todo`,
