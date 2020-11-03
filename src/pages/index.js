@@ -1,15 +1,10 @@
-// Default JS Library
 import React from "react"
 import { useStaticQuery, graphql } from 'gatsby'
 
 import Template from '../components/_layout/_template/template'
 
-// Default ICONs
-// import { faMailBulk } from '@fortawesome/free-solid-svg-icons'
 import { faSpaceShuttle } from '@fortawesome/free-solid-svg-icons'
 import { faUserAstronaut } from '@fortawesome/free-solid-svg-icons'
-
-// Custom ICONs
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faNodeJs } from '@fortawesome/free-brands-svg-icons'
 import { faNpm } from '@fortawesome/free-brands-svg-icons'
