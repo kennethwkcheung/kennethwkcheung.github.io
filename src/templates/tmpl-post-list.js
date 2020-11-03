@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 import { Link } from 'gatsby'
 
 import Template from '../components/_layout/_template/template'
@@ -16,7 +16,7 @@ export default ({pageContext}) => {
         })
 
         return (
-            <div className="row">
+            <div className='row'>
                 <span style={{fontFamily:'Zilla Slab'}}>
                     <Link to={`${ record.node.fields.slug }`}>
                         { record.node.frontmatter.datePublished }
@@ -30,7 +30,7 @@ export default ({pageContext}) => {
 
     return (
         <Template>
-            <div className="row">
+            <div className='row'>
                 <span style={{fontFamily:'Zilla Slab'}}>POST TOTAL: { postTotal }</span>
             </div>
             { postLinks }

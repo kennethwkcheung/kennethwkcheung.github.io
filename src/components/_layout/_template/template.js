@@ -2,9 +2,9 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
-import Header from '../_header/header'
-import Footer from '../_footer/footer'
-import Navigation from '../../_navigation/navigation'
+import Header from './_header/header'
+import Footer from './_footer/footer'
+import Navigation from './_navigation/navigation'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faNodeJs } from '@fortawesome/free-brands-svg-icons'
