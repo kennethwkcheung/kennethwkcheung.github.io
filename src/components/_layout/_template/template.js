@@ -54,14 +54,14 @@ export default ({children}) => {
                 </div>
             </Header>
             <Navigation />
-            {children}
+            { children }
             <Footer author={ data.site.siteMetadata.author }>
                 <div className='row'>
                     <div className={'col'}>
-                        <FontAwesomeIcon icon={faNodeJs} /> <FontAwesomeIcon icon={faNpm} /> <FontAwesomeIcon icon={faJs} /> 
-                        <FontAwesomeIcon icon={faReact} /> <FontAwesomeIcon icon={faMarkdown} /> 
-                        <FontAwesomeIcon icon={faBootstrap} /> <FontAwesomeIcon icon={faSass} /> <FontAwesomeIcon icon={faFortAwesome} /> 
-                        <FontAwesomeIcon icon={faGitAlt} /> <FontAwesomeIcon icon={faGithub} /> <FontAwesomeIcon icon={faGitkraken} /> 
+                        <FontAwesomeIcon icon={ faNodeJs } /> <FontAwesomeIcon icon={ faNpm } /> <FontAwesomeIcon icon={ faJs } /> 
+                        <FontAwesomeIcon icon={ faReact } /> <FontAwesomeIcon icon={ faMarkdown } /> 
+                        <FontAwesomeIcon icon={ faBootstrap } /> <FontAwesomeIcon icon={ faSass } /> <FontAwesomeIcon icon={ faFortAwesome } /> 
+                        <FontAwesomeIcon icon={ faGitAlt } /> <FontAwesomeIcon icon={ faGithub } /> <FontAwesomeIcon icon={ faGitkraken } /> 
                     </div>
                 </div>
             </Footer>
