@@ -3,6 +3,10 @@
     margin: 0 !important;
 }
 
+.err {
+    color: #FF0000;
+}
+
 .content-post {
     background: #1E1A8B;
     color: #FFFFFF;
