@@ -31,48 +31,69 @@ export default () => {
                 >
                     <Form>
                         <div className='row'>
-                            <div className={'col col-sm-2'}>
-                                <label htmlFor='datePublished'>Date Published</label>
+                            <div className={'col col-sm-12'}>
+                                POST Form
                             </div>
-                            <div className={'col col-sm-10'}>
+                        </div>
+                        <div className='row'>
+                            <div className={'col col-sm-4'}>
+                                <div className='container-fluid'>
+                                    <div className='row'>
+                                        <div className={'col col-sm-3'}>
+                                            <label htmlFor='title'>Title</label>
+                                        </div>
+                                        <div className={'col col-sm-9'}>
+                                            <Field name='title' type='text' placeholder='title' />
+                                            <ErrorMessage name='title' render={msg => <span className='err'>{msg}</span>} />
+                                        </div>
+                                    </div>
+                                    <div className='row'>
+                                        <div className={'col col-sm-3'}>
+                                            <label htmlFor='contents'>Contents</label>
+                                        </div>
+                                        <div className={'col col-sm-9'}>
+                                            <Field name='contents' as='textarea' placeholder='contents' />
+                                            <ErrorMessage name='contents' render={msg => <span className='err'>{msg}</span>} />
+                                        </div>
+                                    </div>
+                                    <div className='row'>
+                                        <div className={'col col-sm-3'}>
+                                            <label htmlFor='accessLevel'>Access Level</label>
+                                        </div>
+                                        <div className={'col col-sm-9'}>
+                                            <Field name='accessLevel' as='select'>
+                                                <option value='public'>Public</option>
+                                                <option value='private'>Private</option>
+                                            </Field>
+                                        </div>
+                                    </div>
+                                    <div className='row'>
+                                        <div className={'col col-sm-3'}>
+                                            <label htmlFor='accessLevel'>Tags</label>
+                                        </div>
+                                        <div className={'col col-sm-9'}>
+                                            TAG LIST
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className={'col col-sm-8'}>
                                 <Datepicker name='datePublished' />
+                                * Date Published
                                 <ErrorMessage name='datePublished' render={msg => <span className='err'>{msg}</span>} />
                             </div>
                         </div>
                         <div className='row'>
-                            <div className={'col col-sm-2'}>
-                                <label htmlFor='title'>Title</label>
-                            </div>
-                            <div className={'col col-sm-10'}>
-                                <Field name='title' type='text' placeholder='title' />
-                                <ErrorMessage name='title' render={msg => <span className='err'>{msg}</span>} />
-                            </div>
+                            <div className={'col col-sm-12'}>&nbsp;</div>
                         </div>
                         <div className='row'>
-                            <div className={'col col-sm-2'}>
-                                <label htmlFor='contents'>Contents</label>
-                            </div>
-                            <div className={'col col-sm-10'}>
-                                <Field name='contents' as='textarea' placeholder='contents' />
-                                <ErrorMessage name='contents' render={msg => <span className='err'>{msg}</span>} />
-                            </div>
-                        </div>
-                        <div className='row'>
-                            <div className={'col col-sm-2'}>
-                                <label htmlFor='accessLevel'>Access Level</label>
-                            </div>
-                            <div className={'col col-sm-10'}>
-                                <Field name='accessLevel' as='select'>
-                                    <option value='public'>Public</option>
-                                    <option value='private'>Private</option>
-                                </Field>
-                            </div>
-                        </div>
-                        <div className='row'>
-                            <div className={'col col-sm-2'} />
-                            <div className={'col col-sm-10'}>
+                            <div className={'col col-sm-4'} />
+                            <div className={'col col-sm-8'}>
                                 <button type='submit'>Submit</button>
                             </div>
+                        </div>
+                        <div className='row'>
+                            <div className={'col col-sm-12'}>&nbsp;</div>
                         </div>
                     </Form>
                 </Formik>
