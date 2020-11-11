@@ -4,7 +4,8 @@ module.exports = {
         blogTitle: `BlogShuttle`,
         author: `kennc`,
         vision: `todo`,
-        purpose: `todo`
+        purpose: `todo`,
+        elastic: `http://127.0.0.1:9200`
     },
     plugins: [
         `gatsby-plugin-fontawesome-css`,

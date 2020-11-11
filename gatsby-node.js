@@ -1,4 +1,5 @@
 const { createFilePath } = require(`gatsby-source-filesystem`)
+const axios = require("axios")
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
     const { createNodeField } = actions

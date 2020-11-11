@@ -29,6 +29,7 @@
     "@fortawesome/react-fontawesome": "^0.1.11",
     "@mdx-js/mdx": "^1.6.18",
     "@mdx-js/react": "^1.6.18",
+    "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
     "fontsource-jaldi": "^3.0.9",
     "fontsource-zilla-slab": "^3.0.9",
