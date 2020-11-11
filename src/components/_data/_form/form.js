@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
@@ -8,13 +9,14 @@ import Datepicker from '../_formField/_datepicker/datepicker';
 import defaultStyle from './form.module.css'
 
 export default () => {
-
+    const elastic='http://127.0.0.1:9200'
+    
     return (
         <div className={`row ${defaultStyle.default}`}>
             <div className='container-fluid'>
                 <Formik
                     initialValues={ {
-                        datePublished: '',
+                        datePublished: new Date(),
                         title: '',
                         contents: '',
                         accessLevel: 'public'
@@ -26,7 +28,10 @@ export default () => {
                         accessLevel: Yup.string().required('* Required')
                     }) }
                     onSubmit={ (values) => {
-                        alert(JSON.stringify(values, null, 2));
+                        axios.get(`${elastic}`)
+                        .then((response) => {
+                            console.log(JSON.stringify(response.data.name));
+                        });
                     } }
                 >
                     <Form>
