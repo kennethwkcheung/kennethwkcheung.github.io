@@ -6,6 +6,8 @@ import * as Yup from 'yup';
 
 import Datepicker from '../_formField/_datepicker/datepicker';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faKeyboard } from '@fortawesome/free-regular-svg-icons'
 import defaultStyle from './form.module.css'
 
 export default () => {
@@ -28,16 +30,19 @@ export default () => {
                         accessLevel: Yup.string().required('* Required')
                     }) }
                     onSubmit={ (values) => {
+                        /*
                         axios.get(`${elastic}`)
                         .then((response) => {
                             console.log(JSON.stringify(response.data.name));
                         });
+                        */
+                       alert('CHECK');
                     } }
                 >
                     <Form>
                         <div className='row'>
                             <div className={'col col-sm-12'}>
-                                POST Form
+                                POST Form <FontAwesomeIcon icon={faKeyboard} />
                             </div>
                         </div>
                         <div className='row'>
