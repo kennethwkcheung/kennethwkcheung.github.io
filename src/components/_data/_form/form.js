@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+import { Client } from 'elasticsearch'
 
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
@@ -11,8 +11,7 @@ import { faKeyboard } from '@fortawesome/free-regular-svg-icons'
 import defaultStyle from './form.module.css'
 
 export default () => {
-    const elastic='http://127.0.0.1:9200'
-    
+
     return (
         <div className={`row ${defaultStyle.default}`}>
             <div className='container-fluid'>
@@ -30,13 +29,19 @@ export default () => {
                         accessLevel: Yup.string().required('* Required')
                     }) }
                     onSubmit={ (values) => {
-                        /*
-                        axios.get(`${elastic}`)
-                        .then((response) => {
-                            console.log(JSON.stringify(response.data.name));
+                        const elasticJsClient = new Client({ node: 'http://127.0.0.1:9200' });
+
+                        elasticJsClient.ping({
+                            requestTimeout: Infinity,
+                        }, function (error) {
+                            if (error) {
+                                // TODO: ERROR HANDLING
+                                console.trace('elasticsearch cluster is down!');
+                            } else {
+                                // TODO: ADD BLOG POST
+                                console.log('elasticsearch cluster is well!');
+                            }
                         });
-                        */
-                       alert('CHECK');
                     } }
                 >
                     <Form>
