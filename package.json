@@ -31,6 +31,7 @@
     "@mdx-js/react": "^1.6.18",
     "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
+    "date-fns": "^2.16.1",
     "elasticsearch": "^16.7.1",
     "fontsource-jaldi": "^3.0.9",
     "fontsource-zilla-slab": "^3.0.9",
