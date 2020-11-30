@@ -2,9 +2,10 @@ module.exports = {
     siteMetadata: {
         headerTitle: `BlogShuttle`,
         blogTitle: `BlogShuttle`,
+        brandName: `BlogShuttle`,
         author: `kennc`,
-        vision: `todo`,
-        purpose: `todo`,
+        vision: `with lorenzo`,
+        purpose: `i still do`,
         elastic: `http://127.0.0.1:9200`
     },
     plugins: [

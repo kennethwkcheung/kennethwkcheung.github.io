@@ -5,6 +5,7 @@ import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
 import Datepicker from '../_formField/_datepicker/datepicker';
+import { format } from 'date-fns'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faKeyboard } from '@fortawesome/free-regular-svg-icons'
@@ -29,19 +30,47 @@ export default () => {
                         accessLevel: Yup.string().required('* Required')
                     }) }
                     onSubmit={ (values) => {
-                        const elasticJsClient = new Client({ node: 'http://127.0.0.1:9200' });
+                        let sysdate = format(new Date(), 'yyyy-MM-dd')
+                        console.log(sysdate);
+                        console.log(JSON.stringify(values));
 
-                        elasticJsClient.ping({
-                            requestTimeout: Infinity,
-                        }, function (error) {
-                            if (error) {
-                                // TODO: ERROR HANDLING
-                                console.trace('elasticsearch cluster is down!');
-                            } else {
-                                // TODO: ADD BLOG POST
-                                console.log('elasticsearch cluster is well!');
+                        if(false) {
+                            const elasticJsClient = new Client({ node: 'http://127.0.0.1:9200' });
+
+                            let payload = {
+                                "dateCreated": "20201118",
+                                "dateLastUpdated": "20201118",
+                                "datePublished": "20201118",
+                                "accessLevel": "public",
+                                "subtitle": "subtitle of 20201118",
+                                "contents": "20201118"
                             }
-                        });
+
+                            /*
+                            elasticJsClient.ping({
+                                requestTimeout: Infinity,
+                            }, function (error) {
+                                if (error) {
+                                    // TODO: ERROR HANDLING
+                                    console.trace('elasticsearch cluster is down!');
+                                } else {
+                                    // TODO: ADD BLOG POST
+                                    console.log('elasticsearch cluster is well!');
+                                }
+                            });
+                            */
+                        
+                            elasticJsClient.index({
+                                index: "blog-post",
+                                type: "md",
+                                refresh: true,
+                                body: payload
+                            }).then(function (resp) {
+                                console.log('DONE');
+                            }, function (err) {
+                                console.log(err.message);
+                            });
+                        }
                     } }
                 >
                     <Form>

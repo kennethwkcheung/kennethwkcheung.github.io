@@ -1,4 +1,5 @@
 .default {
-    background: #031f1c;
-    color: #FFFFFF;
+    height: 280px;
+    background: #031f1c !important;
+    color: #FFFFFF !important;
 }

@@ -1,4 +1,4 @@
-.col, .nopadding {
+.container-fluid, .row, .col, .col-6, .col-12, .nopadding {
     padding: 0 !important;
     margin: 0 !important;
 }
@@ -34,4 +34,8 @@
 
 .default-font-lowlight {
     background: #FFCD70;
+}
+
+.default-timeline-background {
+    background: #EEEEEE;
 }

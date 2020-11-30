@@ -1,21 +1,21 @@
 import React from 'react'
-
+import UserLogo from '../../_logo/_user/userLogo'
 import defaultStyle from './header.module.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSpaceShuttle } from '@fortawesome/free-solid-svg-icons'
 
-export default ({children, blogTitle}) => {
+export default ({children, userName, blogTitle, subTitle}) => {
 
     return (
-        <div className={`row ${defaultStyle.default}`}>
-            <div className='container-fluid'>
-                <div className='row'>
-                    <div className={'col'}>
-                        <span className='align-middle'><FontAwesomeIcon icon={faSpaceShuttle} transform={{ rotate:315 }} /> { blogTitle }</span>
-                    </div>
-                </div>
-                { children }
+        <div className={`container-fluid ${defaultStyle.default}`}>
+            <div className={`row`}>
+                <div className={`col-12`}><UserLogo userName={userName} /></div>
             </div>
+            <div className={`row`}>
+                <div className={`col-12`}>{blogTitle}</div>
+            </div>
+            <div className={`row`}>
+                <div className={`col-12`}>{subTitle}</div>
+            </div>
+            { children }
         </div>
     )
 }
